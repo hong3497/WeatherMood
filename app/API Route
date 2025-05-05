@@ -1,0 +1,20 @@
+import { NextResponse } from 'next/server';
+
+export async function POST(req: Request) {
+  const { weatherType } = await req.json();
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    headers: {
+      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+      'Content-Type': 'application/json'
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        { role: 'user', content: `${weatherType} 날씨에 어울리는 감성 문장 한 줄 추천해줘.` }
+      ],
+    }),
+  });
+  const data = await response.json();
+  return NextResponse.json({ quote: data.choices[0].message.content });
+}

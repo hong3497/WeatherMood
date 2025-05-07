@@ -54,7 +54,6 @@ export default function WeatherCard({ weather }: { weather: WeatherData }) {
             src={`${music.url}?autoplay=1&mute=1`}
             title="Recommended Music"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allow="autoplay"
           ></iframe>
           <p className="text-sm mt-1 text-gray-500">{music.title}</p>
         </>

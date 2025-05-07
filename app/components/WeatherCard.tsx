@@ -3,11 +3,11 @@
 import { useEffect, useState } from "react";
 import { getWeatherMessage } from "../../lib/messages";
 import { getMusicRecommendation } from "../../lib/music";
+import { WeatherData } from "../../types/weather";
 
-export default function WeatherCard({ weather }: { weather: any }) {
+export default function WeatherCard({ weather }: { weather: WeatherData }) {
   const main = weather.weather[0].main.toLowerCase();
   const message = getWeatherMessage(main);
-
   const [music, setMusic] = useState<{ title: string; url: string } | null>(
     null
   );

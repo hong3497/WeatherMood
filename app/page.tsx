@@ -3,9 +3,10 @@
 import { useEffect, useState } from "react";
 import { fetchWeather } from "../lib/weather";
 import WeatherCard from "./components/WeatherCard";
+import { WeatherData } from "../types/weather";
 
 export default function Home() {
-  const [weather, setWeather] = useState<any>(null);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(async (pos) => {
@@ -23,9 +24,7 @@ export default function Home() {
   return (
     <main
       className="min-h-screen bg-cover bg-center flex items-center justify-center"
-      style={{
-        backgroundImage: `url(${bgUrl})`,
-      }}
+      style={{ backgroundImage: `url(${bgUrl})` }}
     >
       {weather && <WeatherCard weather={weather} />}
     </main>

@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌤️ WeatherMood
 
-## Getting Started
+**WeatherMood**는 사용자의 현재 날씨 정보를 기반으로 감성적인 콘텐츠를 추천해주는 반응형 웹 애플리케이션입니다.  
+실시간 날씨를 조회하고, 날씨에 어울리는 음악과 이모지, 문구 등을 제공하여 오늘의 분위기를 즐길 수 있도록 돕습니다.
 
-First, run the development server:
+> “당신의 날씨에 감성을 더해보세요.”
+
+---
+
+## 🚀 배포 주소
+
+👉 [https://weather-mood.vercel.app](https://weather-mood.vercel.app)
+
+---
+
+## 📸 주요 기능
+
+- 📍 **현재 위치 기반 날씨 정보 조회 (OpenWeatherMap API)**
+- 🎵 **날씨에 어울리는 음악 자동 추천 (YouTube Embed API)**
+- 😺 **날씨별 감정 표현 이모지 및 문구 출력**
+- 📱 **반응형 디자인 (Tailwind CSS 적용)**
+- ☁️ **Vercel을 통한 배포 및 공유**
+
+---
+
+## 🛠 사용 기술 스택
+
+| 항목         | 기술                  |
+|--------------|-----------------------|
+| 프레임워크   | Next.js (App Router)  |
+| 언어         | TypeScript            |
+| 스타일링     | Tailwind CSS          |
+| 날씨 API     | OpenWeatherMap API    |
+| 음악 추천 API| YouTube Embed         |
+| 배포         | Vercel                |
+| 상태 관리    | React 내장 useState   |
+
+---
+
+## 📁 폴더 구조
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+src/
+├── app/
+│   ├── components/        # WeatherCard, GPTQuote, YouTubeEmbed 등
+│   ├── page.tsx           # 메인 페이지
+│   └── layout.tsx         # 레이아웃 구성
+├── lib/                   # 날씨, 음악, 메시지 API 함수
+├── public/weather-bg/     # 날씨별 배경 이미지
+├── styles/                # 글로벌 스타일
+├── types/                 # TypeScript 타입 정의
+└── .env.local             # 환경변수 (API KEY 등)

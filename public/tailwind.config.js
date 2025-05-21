@@ -1,12 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "export",
+  images: { unoptimized: true },
+  basePath: "/WeatherMood",
+  assetPrefix: "/WeatherMood/",
 };
+
+module.exports = nextConfig;
